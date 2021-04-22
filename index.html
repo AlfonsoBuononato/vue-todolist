@@ -34,12 +34,10 @@
         <section class="todos-container">
 
             <ul>
-                <li class="todo"
-                    v-for="(todo, index) in todos">
-                    <span class="text">{{todo.servizi}}</span>
-                    <i class="fas fa-times" 
-                       @click="removeTodo(index)">
-                    </i>
+                <li class="todo" v-for="(todo, index) in todos">
+                    <span class="text" :class="{completato: todo.completato}" @click="updateStatus(index)">{{todo.servizi}}</span>
+
+                    <i class="fas fa-times" @click="removeTodo(index)"></i>
                 </li>
             </ul>
         </section>

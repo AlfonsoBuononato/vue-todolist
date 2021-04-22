@@ -11,6 +11,8 @@
     max-width: 700px;
     margin: 0 auto;
     padding: 0 1rem;
+    position: relative;
+    z-index: 20;
 }
 
 /* HEADER */
@@ -89,16 +91,39 @@
     cursor: pointer;
 }
 
+.todo .text{
+    position: relative;
+    padding: 0 30px;
+}
+
+.todo .text::before{
+    content: "";
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+}
+
+
+
+
 /* COMPLETED */
 
-.todo.completed{
+.todo .completato::before{
+    background-color: #00e165;
+}
+
+.todo .completato{
     text-decoration: line-through;
 }
 
 /* STYLE CONTAINER 2*/
 
 .container2{
-    position: relative;
+    position: fixed;
+    bottom: 0;
 }
 .container2 svg:first-child{
     position: relative;
